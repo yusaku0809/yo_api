@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by_name(params[:name])
+    render json: @user
   end
 
   def create
